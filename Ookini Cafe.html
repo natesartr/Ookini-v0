@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ōkini (おおきに) · Café de Especialidad & Kyoto Drip Bar</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#f6f7f2',
+              100: '#ebede2',
+              200: '#d7dcc7',
+              500: '#647a3c',
+              600: '#4e622d',
+              700: '#3e4f24',
+              800: '#323f1e',
+              900: '#283318'
+            },
+            skysoft: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Shippori Mincho"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom styling for subtle textures and animations */
+    .bg-paper {
+      background-color: #fafbf8;
+      background-image: radial-gradient(#4e622d 0.65px, transparent 0.65px), radial-gradient(#38bdf8 0.65px, #fafbf8 0.65px);
+      background-size: 26px 26px;
+      background-position: 0 0, 13px 13px;
+      background-opacity: 0.03;
+    }
+    .badge-blur {
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="bg-[#fcfdfa] text-stone-800 font-sans antialiased selection:bg-skysoft-200 selection:text-olive-900">
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-olive-100/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand / Kansai Logo -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-olive-700 text-white flex items-center justify-center shadow-md shadow-olive-900/10 group-hover:scale-105 transition-transform">
+            <span class="font-serif text-lg font-bold">お</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-bold tracking-tight text-olive-900">Ōkini</span>
+              <span class="text-xs font-serif text-olive-600 border border-olive-200 px-1.5 py-0.5 rounded-full bg-olive-50">おおきに</span>
+            </div>
+            <p class="text-xs text-stone-500 font-medium">Kyoto Drip & Specialty Bar</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+          <a href="#filosofia" class="hover:text-olive-700 transition-colors">Filosofía</a>
+          <a href="#slowbar" class="hover:text-olive-700 transition-colors">Slow Bar (Reservas)</a>
+          <a href="#walkin" class="hover:text-olive-700 transition-colors">Walk-in</a>
+          <a href="#cata" class="hover:text-olive-700 transition-colors">Cata Semanal</a>
+          <a href="#horarios" class="hover:text-olive-700 transition-colors">Horarios</a>
+        </nav>
+
+        <!-- Right Side: Currency Toggle & Action -->
+        <div class="flex items-center gap-3">
+          <!-- Currency Switcher -->
+          <div class="flex items-center bg-olive-50 p-1 rounded-xl border border-olive-200/70 text-xs font-semibold">
+            <button id="btnUSD" onclick="setCurrency('USD')" class="px-2.5 py-1 rounded-lg transition-all bg-white text-olive-800 shadow-sm">USD $</button>
+            <button id="btnMXN" onclick="setCurrency('MXN')" class="px-2.5 py-1 rounded-lg text-stone-500 hover:text-stone-800 transition-all">MXN $</button>
+          </div>
+
+          <!-- Quick Reserve Button -->
+          <a href="#reservar" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-olive-700 hover:bg-olive-800 text-white text-sm font-medium transition-all shadow-sm hover:shadow active:scale-95">
+            <span>Reservar Taza</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:py-24 bg-paper border-b border-olive-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text details -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-skysoft-100 border border-skysoft-200 text-skysoft-600 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-skysoft-400 animate-pulse"></span>
+            Abierto hoy de 8:00 AM a 8:00 PM · Kioto en cada gota
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-olive-950 font-bold tracking-tight leading-[1.15]">
+            El arte del tiempo, el ritual y el <span class="text-olive-700 italic">agradecimiento</span>.
+          </h1>
+
+          <p class="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed">
+            En el dialecto Kansai de Kioto, <strong class="text-olive-800 font-semibold">«Ōkini»</strong> significa gracias con reverencia. Honramos la cuna del <span class="text-skysoft-600 font-medium">Kyoto Drip</span> preparando un máximo estricto de <strong class="text-stone-900">50 tazas lentas al día</strong> y una barra abierta de prensa francesa para todo transeúnte.
+          </p>
+
+          <!-- Daily counters card -->
+          <div class="grid sm:grid-cols-2 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
+            <div class="bg-white/90 p-4 rounded-2xl border border-olive-200 shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-olive-100 flex items-center justify-center text-olive-700 font-serif font-bold text-xl">
+                50
+              </div>
+              <div class="text-left">
+                <span class="text-xs uppercase font-bold tracking-wider text-olive-700 block">Límite Diario Slow Bar</span>
+                <span class="text-sm font-semibold text-stone-900"><span id="cupsRemaining">34</span> tazas disponibles hoy</span>
+              </div>
+            </div>
+
+            <div class="bg-white/90 p-4 rounded-2xl border border-skysoft-200 shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-skysoft-100 flex items-center justify-center text-skysoft-600 font-serif font-bold text-xl">
+                8
+              </div>
+              <div class="text-left">
+                <span class="text-xs uppercase font-bold tracking-wider text-skysoft-600 block">Cata Semanal</span>
+                <span class="text-sm font-semibold text-stone-900"><span id="cuppingSpotsRemaining">3</span> cupos restantes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center gap-3 pt-2 justify-center lg:justify-start">
+            <a href="#slowbar" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-olive-700 hover:bg-olive-800 text-white font-medium text-center transition-all shadow-md shadow-olive-900/10">
+              Ver Métodos con Reserva
+            </a>
+            <a href="#walkin" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white hover:bg-olive-50 border border-olive-300 text-olive-800 font-medium text-center transition-all">
+              Barra Walk-in (Sin Reserva)
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Visual Hero Element -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none bg-white p-6 sm:p-8 rounded-3xl border border-olive-200 shadow-xl shadow-olive-900/5">
+            
+            <div class="flex items-center justify-between border-b border-olive-100 pb-4 mb-6">
+              <div>
+                <span class="text-xs font-serif text-olive-600 font-semibold tracking-wider uppercase">Kioto Slow Drip Bar</span>
+                <h3 class="text-xl font-serif font-bold text-stone-900">Extracción Gota a Gota</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-olive-100 text-olive-800 text-xs font-semibold">12 Horas</span>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Method 1 -->
+              <div class="p-3.5 rounded-xl bg-olive-50/60 border border-olive-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">💧</span>
+                  <div>
+                    <h4 class="font-semibold text-sm text-stone-900">Kyoto Cold Drip</h4>
+                    <p class="text-xs text-stone-500">Torre japonesa de percolación en frío</p>
+                  </div>
+                </div>
+                <span class="font-bold text-olive-800 text-sm price-tag" data-usd="7" data-mxn="125">$7 USD</span>
+              </div>
+
+              <!-- Method 2 -->
+              <div class="p-3.5 rounded-xl bg-skysoft-50/50 border border-skysoft-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">🌪️</span>
+                  <div>
+                    <h4 class="font-semibold text-sm text-stone-900">Siphon Japonés</h4>
+                    <p class="text-xs text-stone-500">Vacío térmico y textura sedosa</p>
+                  </div>
+                </div>
+                <span class="font-bold text-skysoft-600 text-sm price-tag" data-usd="8" data-mxn="145">$8 USD</span>
+              </div>
+
+              <!-- Method 3 -->
+              <div class="p-3.5 rounded-xl bg-white border border-stone-200 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">☕</span>
+                  <div>
+                    <h4 class="font-semibold text-sm text-stone-900">V60 Pour Over</h4>
+                    <p class="text-xs text-stone-500">Claridad y notas florales exactas</p>
+                  </div>
+                </div>
+                <span class="font-bold text-stone-800 text-sm price-tag" data-usd="5" data-mxn="90">$5 USD</span>
+              </div>
+            </div>
+
+            <!-- Policy Alert Box -->
+            <div class="mt-6 p-4 rounded-2xl bg-olive-900 text-olive-100 text-xs leading-relaxed space-y-1">
+              <div class="flex items-center gap-1.5 font-bold text-skysoft-200">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Política de Calidad Ōkini:
+              </div>
+              <p>Para asegurar una taza irrepetible, cada persona puede reservar un <strong>máximo de 2 tazas por día</strong> dentro de nuestro cupo de 50 tazas totales.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="filosofia" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase tracking-widest font-bold text-skysoft-600">Nuestra Raíz en Japón</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-olive-950">
+          De Kioto a tu taza: ¿Por qué Ōkini?
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          En la región de Kansai no se dice el formal «Arigatō», sino «Ōkini» (おおきに). Es una palabra que encierra gratitud por la presencia del invitado y reverencia por el oficio paciente.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-3xl bg-olive-50/50 border border-olive-100/90 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-olive-700 text-white flex items-center justify-center text-xl mb-6">
+              ⏳
+            </div>
+            <h3 class="text-xl font-serif font-bold text-olive-900 mb-3">La torre Kyoto Drip</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Nacida en Kioto en el siglo XVII, esta torre de cristal filtra gota a gota agua purificada helada durante 8 a 12 horas sobre café de molienda precisa. Sin acidez agresiva, puro cuerpo y dulzor licoroso.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-olive-200/60 text-xs font-semibold text-olive-700">
+            Producción artesanal limitada
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-3xl bg-skysoft-50/60 border border-skysoft-200/80 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-skysoft-500 text-white flex items-center justify-center text-xl mb-6">
+              ⚖️
+            </div>
+            <h3 class="text-xl font-serif font-bold text-stone-900 mb-3">50 Tazas. Sin Atajos.</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              El agua, la curva de tueste y la calibración del grano exigen atención absoluta. Al limitar nuestras extracciones complejas a 50 al día, el barista dedica sus sentidos por completo a tu servicio.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-skysoft-200 text-xs font-semibold text-skysoft-600">
+            Máximo 2 por persona
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 shadow-sm relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-stone-800 text-white flex items-center justify-center text-xl mb-6">
+              🚪
+            </div>
+            <h3 class="text-xl font-serif font-bold text-stone-900 mb-3">Hospitalidad Walk-in</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Si no tienes reserva o vas con prisa, la puerta siempre está abierta. Nuestra prensa francesa de especialidad se prepara al momento para que nunca te quedes sin buen café en tu rutina diaria.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-200 text-xs font-semibold text-stone-700">
+            Todos los días de 8 a 8
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="slowbar" class="py-20 bg-paper border-y border-olive-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-olive-100 text-olive-800 text-xs font-bold uppercase tracking-wider mb-2">
+            Modalidad con Reserva Previa
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-olive-950">
+            Slow Bar de Métodos Japoneses
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base mt-2 max-w-xl">
+            Preparaciones complejas y calibradas al miligramo. Cupo estricto de <strong>50 tazas por jornada</strong>, máximo 2 tazas por cliente.
+          </p>
+        </div>
+
+        <div class="mt-4 md:mt-0 flex items-center gap-2">
+          <div class="bg-white px-4 py-2 rounded-xl border border-olive-200 text-xs font-medium text-stone-600">
+            Moneda actual: <strong id="activeCurrencyDisplay" class="text-olive-700">USD ($)</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Methods Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- V60 -->
+        <div class="bg-white rounded-3xl p-6 border border-olive-200/80 shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <span class="text-3xl">☕</span>
+              <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 font-semibold text-xs">Filtrado Cónico</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-stone-900">V60 Pour Over</h3>
+              <p class="text-xs text-olive-700 font-semibold mt-0.5">Perfil: Limpio, brillante, floral</p>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Extracción manual por goteo con papel japonés estricto. Revela la acidez málica y notas florales de nuestros granos de origen único lavado.
+            </p>
+            <div class="p-3 bg-stone-50 rounded-xl text-xs text-stone-600 space-y-1">
+              <div class="flex justify-between"><span>Tiempo de infusión:</span> <strong>3:30 min</strong></div>
+              <div class="flex justify-between"><span>Temperatura:</span> <strong>92°C</strong></div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-stone-400 block">Precio por taza</span>
+              <span class="text-2xl font-serif font-bold text-olive-800 price-tag" data-usd="5" data-mxn="90">$5 USD</span>
+            </div>
+            <button onclick="selectMethodForBooking('V60 Pour Over', 5, 90)" class="px-4 py-2 rounded-xl bg-olive-700 hover:bg-olive-800 text-white text-xs font-semibold transition-all">
+              Reservar Taza
+            </button>
+          </div>
+        </div>
+
+        <!-- Kyoto Drip (Featured) -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-skysoft-400 shadow-md relative flex flex-col justify-between">
+          <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-skysoft-500 text-white text-[11px] font-bold uppercase tracking-wider">
+            Insignia de la Casa
+          </div>
+          <div class="space-y-4 mt-1">
+            <div class="flex justify-between items-start">
+              <span class="text-3xl">💧</span>
+              <span class="px-3 py-1 rounded-full bg-skysoft-100 text-skysoft-700 font-semibold text-xs">Torre Gota a Gota</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-stone-900">Kyoto Cold Drip</h3>
+              <p class="text-xs text-skysoft-600 font-semibold mt-0.5">Perfil: Licoroso, sedoso, notas a cacao y uva</p>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Nuestra joya originaria de Kioto. Infusión en frío que cae a razón de una gota por segundo durante 10 horas continuas. Servido con hielo tallado a mano.
+            </p>
+            <div class="p-3 bg-skysoft-50 rounded-xl text-xs text-stone-600 space-y-1">
+              <div class="flex justify-between"><span>Tiempo de extracción:</span> <strong>10 Horas</strong></div>
+              <div class="flex justify-between"><span>Disponibilidad:</span> <strong>Muy Limitada</strong></div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-stone-400 block">Precio por taza</span>
+              <span class="text-2xl font-serif font-bold text-skysoft-600 price-tag" data-usd="7" data-mxn="125">$7 USD</span>
+            </div>
+            <button onclick="selectMethodForBooking('Kyoto Cold Drip', 7, 125)" class="px-4 py-2 rounded-xl bg-skysoft-500 hover:bg-skysoft-600 text-white text-xs font-semibold transition-all">
+              Reservar Taza
+            </button>
+          </div>
+        </div>
+
+        <!-- Siphon -->
+        <div class="bg-white rounded-3xl p-6 border border-olive-200/80 shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <span class="text-3xl">🌪️</span>
+              <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 font-semibold text-xs">Vacío Térmico</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-stone-900">Siphon Japonés</h3>
+              <p class="text-xs text-olive-700 font-semibold mt-0.5">Perfil: Aromático, té negro, cuerpo sedoso</p>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Un espectáculo de física y precisión culinaria. Utiliza presión de vapor e inmersión total para extraer aceites esenciales aromáticos y cuerpo redondo.
+            </p>
+            <div class="p-3 bg-stone-50 rounded-xl text-xs text-stone-600 space-y-1">
+              <div class="flex justify-between"><span>Método:</span> <strong>Llama y Vacío</strong></div>
+              <div class="flex justify-between"><span>Sensación en boca:</span> <strong>Máxima textura</strong></div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-stone-400 block">Precio por taza</span>
+              <span class="text-2xl font-serif font-bold text-olive-800 price-tag" data-usd="8" data-mxn="145">$8 USD</span>
+            </div>
+            <button onclick="selectMethodForBooking('Siphon Japonés', 8, 145)" class="px-4 py-2 rounded-xl bg-olive-700 hover:bg-olive-800 text-white text-xs font-semibold transition-all">
+              Reservar Taza
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="walkin" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Walk In Section -->
+        <div class="lg:col-span-6 bg-olive-50/70 p-8 sm:p-10 rounded-3xl border border-olive-200 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-olive-200 text-olive-800 text-xs font-bold uppercase tracking-wider">
+              <span>🚶</span> Sin Reserva Previa · Walk-in
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-olive-950">
+              Prensa Francesa de Especialidad
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              ¿Pasabas caminando por el vecindario? No requieres reserva. Servimos café de origen en prensa francesa continuo durante toda la jornada, de 8:00 AM a 8:00 PM.
+            </p>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm text-stone-700 pt-2">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-olive-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <strong>Sin límite por persona:</strong> pide las tazas que desees.
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-olive-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <strong>Disponible hasta cerrar:</strong> servicio ágil para llevar o tomar en barra.
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-olive-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Grano recién tostado con molienda gruesa y 4 minutos de reposo.
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-olive-200/80 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-stone-500 block">Precio por taza</span>
+              <span class="text-3xl font-serif font-bold text-olive-900 price-tag" data-usd="3" data-mxn="55">$3 USD</span>
+            </div>
+            <a href="#horarios" class="px-5 py-2.5 rounded-xl bg-white hover:bg-olive-100 border border-olive-300 text-olive-800 text-xs font-semibold transition-all">
+              Ver Dónde Estamos
+            </a>
+          </div>
+        </div>
+
+        <!-- Weekly Cupping Section -->
+        <div id="cata" class="lg:col-span-6 bg-gradient-to-br from-skysoft-500 to-skysoft-600 text-white p-8 sm:p-10 rounded-3xl shadow-lg relative flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider">
+                ✨ Experiencia Exclusiva
+              </span>
+              <span class="text-xs bg-white text-skysoft-600 font-bold px-2.5 py-1 rounded-full">
+                1 vez por semana
+              </span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold">
+              Cata Semanal Ōkini: 8 Cupos
+            </h3>
+
+            <p class="text-skysoft-100 text-sm leading-relaxed">
+              Una mesa redonda de degustación sensorial guiada por nuestro Q-Grader y baristas principales. Compararemos procesos naturales, lavados y fermentaciones anaeróbicas traídas de pequeños productores.
+            </p>
+
+            <div class="bg-black/15 backdrop-blur-sm p-4 rounded-2xl border border-white/10 space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span>Cupo máximo por sesión:</span>
+                <span class="font-bold">8 personas únicamente</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Incluye:</span>
+                <span class="font-bold">5 degustaciones + maridaje + guía impresa</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Día:</span>
+                <span class="font-bold">Sábados · 10:30 AM a 12:30 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-white/20 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-skysoft-100 block">Por persona</span>
+              <span class="text-3xl font-serif font-bold price-tag" data-usd="25" data-mxn="450">$25 USD</span>
+            </div>
+            <button onclick="selectCuppingBooking()" class="px-6 py-3 rounded-xl bg-white text-skysoft-600 hover:bg-skysoft-50 text-xs font-bold transition-all shadow-md active:scale-95">
+              Reservar Lugar en la Cata
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar" class="py-20 bg-paper border-t border-olive-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-2 mb-10">
+        <span class="text-xs uppercase tracking-widest font-bold text-olive-700">Sistema de Reservas en Línea</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-olive-950">Aparta tu experiencia</h2>
+        <p class="text-stone-600 text-sm">Reserva métodos lentos (máx. 2 tazas) o asegura tu lugar en la cata de 8 personas.</p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-10 rounded-3xl border border-olive-200 shadow-xl">
+        <form id="reservationForm" onsubmit="handleReservationSubmit(event)" class="space-y-6">
+          
+          <!-- Experience Type Radio Selector -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-2">Selecciona el tipo de experiencia</label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-4 rounded-2xl border cursor-pointer border-olive-600 bg-olive-50/50 has-[:checked]:border-olive-700 has-[:checked]:bg-olive-50">
+                <input type="radio" name="expType" value="slowbar" checked onchange="toggleExperienceType('slowbar')" class="text-olive-700 focus:ring-olive-600">
+                <div>
+                  <span class="block text-sm font-bold text-stone-900">Slow Bar (V60 / Kyoto / Siphon)</span>
+                  <span class="text-xs text-stone-500">Máx. 2 tazas · Cupo diario de 50</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-4 rounded-2xl border cursor-pointer border-stone-200 hover:border-skysoft-300 has-[:checked]:border-skysoft-500 has-[:checked]:bg-skysoft-50/50">
+                <input type="radio" name="expType" value="cupping" onchange="toggleExperienceType('cupping')" class="text-skysoft-600 focus:ring-skysoft-500">
+                <div>
+                  <span class="block text-sm font-bold text-stone-900">Cata Semanal Guiada</span>
+                  <span class="text-xs text-stone-500">Solo 8 cupos semanales ($25 USD / $450 MXN)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Slow Bar Options (Dynamic) -->
+          <div id="slowBarFields" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="methodSelect" class="block text-xs font-bold text-stone-700 mb-1">Método de Extracción</label>
+                <select id="methodSelect" onchange="calculateTotal()" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 focus:border-olive-600 text-sm">
+                  <option value="kyoto" data-usd="7" data-mxn="125">Kyoto Cold Drip ($7 USD / $125 MXN)</option>
+                  <option value="siphon" data-usd="8" data-mxn="145">Siphon Japonés ($8 USD / $145 MXN)</option>
+                  <option value="v60" data-usd="5" data-mxn="90">V60 Pour Over ($5 USD / $90 MXN)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="cupsCount" class="block text-xs font-bold text-stone-700 mb-1">
+                  Número de Tazas <span class="text-olive-700 font-normal">(Máximo 2 por persona)</span>
+                </label>
+                <select id="cupsCount" onchange="calculateTotal()" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 focus:border-olive-600 text-sm font-semibold">
+                  <option value="1">1 Taza</option>
+                  <option value="2">2 Tazas (Límite por persona)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cupping Options (Dynamic) -->
+          <div id="cuppingFields" class="hidden space-y-4">
+            <div class="p-4 rounded-2xl bg-skysoft-50 border border-skysoft-200 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold text-skysoft-700 block">Próxima sesión disponible:</span>
+                <span class="text-sm font-semibold text-stone-900">Sábado próximo · 10:30 AM a 12:30 PM</span>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-stone-500 block">Lugares:</span>
+                <span class="text-xs font-bold px-2 py-1 rounded bg-skysoft-200 text-skysoft-800">3 de 8 disponibles</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="cuppingSeats" class="block text-xs font-bold text-stone-700 mb-1">Número de cupos a reservar</label>
+              <select id="cuppingSeats" onchange="calculateTotal()" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-skysoft-500 focus:border-skysoft-500 text-sm">
+                <option value="1">1 Persona</option>
+                <option value="2">2 Personas</option>
+                <option value="3">3 Personas (Máx disponible ahora)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Personal Information Fields -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="clientName" class="block text-xs font-bold text-stone-700 mb-1">Nombre Completo</label>
+              <input type="text" id="clientName" required placeholder="Ej. Sofia Tanaka" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 text-sm">
+            </div>
+
+            <div>
+              <label for="clientPhone" class="block text-xs font-bold text-stone-700 mb-1">WhatsApp / Teléfono</label>
+              <input type="tel" id="clientPhone" required placeholder="+52 o +1 (número)" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 text-sm">
+            </div>
+          </div>
+
+          <!-- Date & Time Slot -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="reserveDate" class="block text-xs font-bold text-stone-700 mb-1">Fecha deseada</label>
+              <input type="date" id="reserveDate" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 text-sm">
+            </div>
+
+            <div>
+              <label for="reserveTime" class="block text-xs font-bold text-stone-700 mb-1">Hora (Horario de 8:00 AM a 8:00 PM)</label>
+              <select id="reserveTime" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-olive-600 text-sm">
+                <option value="08:30">08:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="15:30">03:30 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="18:30">06:30 PM</option>
+                <option value="19:15">07:15 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Total Calculation Banner -->
+          <div class="p-4 rounded-2xl bg-olive-50 border border-olive-200 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-olive-800 uppercase font-bold tracking-wider">Total Estimado</span>
+              <p class="text-xs text-stone-500">Se abona al momento de tu experiencia en barra</p>
+            </div>
+            <div class="text-right">
+              <span id="calculatedTotal" class="text-2xl font-serif font-bold text-olive-900">$7 USD</span>
+              <span id="calculatedAlternate" class="block text-xs text-stone-500">equivale a $125 MXN</span>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-2xl bg-olive-700 hover:bg-olive-800 text-white font-semibold text-base transition-all shadow-md shadow-olive-900/10 active:scale-[0.99]">
+            Confirmar Reservación Ōkini
+          </button>
+
+          <p class="text-center text-[11px] text-stone-400">
+            Respetamos tu tiempo. Tu mesa y preparación se calibran 10 minutos antes de tu hora pactada.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="horarios" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-olive-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        
+        <!-- Decorative subtle background Japanese kanji -->
+        <span class="absolute -right-6 -bottom-10 text-[180px] font-serif text-white/5 select-none pointer-events-none">
+          京都
+        </span>
+
+        <div class="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+          
+          <div class="md:col-span-7 space-y-4">
+            <span class="px-3 py-1 rounded-full bg-olive-800 text-skysoft-300 text-xs font-bold uppercase tracking-wider">
+              Abierto los 365 días del año
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-serif font-bold">
+              Horario de Atención: 8 a 8
+            </h3>
+            <p class="text-olive-200 text-sm leading-relaxed max-w-lg">
+              Desde las primeras horas de la mañana hasta el ocaso, las torres de Kyoto Drip continúan su paciente goteo. Visítanos en nuestra barra central.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-4 text-xs">
+              <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                <span class="text-skysoft-200 font-bold block mb-1">Lunes a Domingo</span>
+                <span class="text-base font-semibold">08:00 AM – 08:00 PM</span>
+              </div>
+              <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                <span class="text-skysoft-200 font-bold block mb-1">Cata Semanal</span>
+                <span class="text-base font-semibold">Sábados 10:30 AM (8 cupos)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 bg-white text-stone-800 p-6 rounded-2xl shadow-lg space-y-3">
+            <h4 class="font-serif font-bold text-lg text-olive-900">Ōkini Coffee Bar</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              📍 Av. Kioto & Calle del Grano #108<br>
+              Zona Gastronómica / Café de Especialidad
+            </p>
+            <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs">
+              <span class="text-stone-500">¿Dudas por WhatsApp?</span>
+              <a href="https://wa.me/?text=Hola%20Okini%20quisiera%20consultar%20sobre%20el%20Kyoto%20Drip" target="_blank" class="px-3 py-1.5 rounded-lg bg-olive-100 text-olive-800 font-semibold hover:bg-olive-200 transition-colors">
+                Escribir al Barista
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-olive-100 relative text-center space-y-4 animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="w-16 h-16 rounded-2xl bg-olive-100 text-olive-700 mx-auto flex items-center justify-center text-3xl">
+        🍵
+      </div>
+
+      <div class="space-y-1">
+        <span class="text-xs font-serif text-olive-600 font-bold tracking-wider uppercase">おおきに · Confirmación</span>
+        <h3 class="text-2xl font-serif font-bold text-stone-900">¡Tu lugar está reservado!</h3>
+      </div>
+
+      <div id="modalReceiptDetails" class="bg-paper p-4 rounded-2xl border border-olive-100 text-left text-xs space-y-2 text-stone-700">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <p class="text-xs text-stone-500">
+        Hemos guardado tu turno. Si necesitas reagendar, avísanos con al menos 2 horas de anticipación para ceder el cupo.
+      </p>
+
+      <button onclick="closeBookingModal()" class="w-full py-3 rounded-xl bg-olive-700 hover:bg-olive-800 text-white font-semibold text-sm transition-all shadow-sm">
+        Entendido, muchas gracias (Ōkini)
+      </button>
+
+    </div>
+  </div>
+
+  <footer class="bg-stone-900 text-stone-400 py-12 text-xs border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-olive-700 text-white flex items-center justify-center font-serif font-bold text-sm">
+          お
+        </div>
+        <div>
+          <span class="text-stone-200 font-bold tracking-tight text-sm">Ōkini (おおきに) Specialty Coffee</span>
+          <p class="text-stone-500">Tradición de Kioto & Granos de Altura</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-stone-400">
+        <span>Horario: 8 AM - 8 PM (Diario)</span>
+        <span>·</span>
+        <span>Límite 50 tazas Slow Bar</span>
+      </div>
+
+      <p class="text-stone-500 text-center sm:text-right">
+        &copy; <span id="currentYear"></span> Ōkini Café. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // State management
+    let currentCurrency = 'USD'; // 'USD' or 'MXN'
+    const exchangeRate = 18; // Reference 1 USD ~ 18 MXN for rounding calculations
+    
+    // Remaining counts
+    let remainingSlowCups = 34; // Out of 50
+    let remainingCuppingSpots = 3; // Out of 8
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Set minimum date to today
+    const dateInput = document.getElementById('reserveDate');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    dateInput.value = today;
+
+    // Currency Switcher function
+    function setCurrency(currency) {
+      currentCurrency = currency;
+      const btnUSD = document.getElementById('btnUSD');
+      const btnMXN = document.getElementById('btnMXN');
+      const displayTag = document.getElementById('activeCurrencyDisplay');
+
+      if (currency === 'USD') {
+        btnUSD.className = 'px-2.5 py-1 rounded-lg transition-all bg-white text-olive-800 shadow-sm font-bold';
+        btnMXN.className = 'px-2.5 py-1 rounded-lg text-stone-500 hover:text-stone-800 transition-all font-medium';
+        displayTag.textContent = 'USD ($)';
+      } else {
+        btnMXN.className = 'px-2.5 py-1 rounded-lg transition-all bg-white text-olive-800 shadow-sm font-bold';
+        btnUSD.className = 'px-2.5 py-1 rounded-lg text-stone-500 hover:text-stone-800 transition-all font-medium';
+        displayTag.textContent = 'MXN ($)';
+      }
+
+      // Update all prices across the page
+      document.querySelectorAll('.price-tag').forEach(tag => {
+        const usdVal = tag.getAttribute('data-usd');
+        const mxnVal = tag.getAttribute('data-mxn');
+        
+        if (currentCurrency === 'USD') {
+          tag.textContent = `$${usdVal} USD`;
+        } else {
+          tag.textContent = `$${mxnVal} MXN`;
+        }
+      });
+
+      calculateTotal();
+    }
+
+    // Toggle experience fields in form
+    function toggleExperienceType(type) {
+      const slowBarFields = document.getElementById('slowBarFields');
+      const cuppingFields = document.getElementById('cuppingFields');
+
+      if (type === 'slowbar') {
+        slowBarFields.classList.remove('hidden');
+        cuppingFields.classList.add('hidden');
+      } else {
+        slowBarFields.classList.add('hidden');
+        cuppingFields.classList.remove('hidden');
+      }
+      calculateTotal();
+    }
+
+    // Select method from card directly
+    function selectMethodForBooking(methodName, usd, mxn) {
+      const slowBarRadio = document.querySelector('input[name="expType"][value="slowbar"]');
+      slowBarRadio.checked = true;
+      toggleExperienceType('slowbar');
+
+      const select = document.getElementById('methodSelect');
+      if (methodName.includes('V60')) select.value = 'v60';
+      if (methodName.includes('Kyoto')) select.value = 'kyoto';
+      if (methodName.includes('Siphon')) select.value = 'siphon';
+
+      calculateTotal();
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Select cupping from card
+    function selectCuppingBooking() {
+      const cuppingRadio = document.querySelector('input[name="expType"][value="cupping"]');
+      cuppingRadio.checked = true;
+      toggleExperienceType('cupping');
+      calculateTotal();
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Calculate total price based on active selection and currency
+    function calculateTotal() {
+      const expType = document.querySelector('input[name="expType"]:checked').value;
+      const totalDisplay = document.getElementById('calculatedTotal');
+      const alternateDisplay = document.getElementById('calculatedAlternate');
+
+      let usdTotal = 0;
+      let mxnTotal = 0;
+
+      if (expType === 'slowbar') {
+        const methodSelect = document.getElementById('methodSelect');
+        const selectedOption = methodSelect.options[methodSelect.selectedIndex];
+        const cups = parseInt(document.getElementById('cupsCount').value, 10);
+
+        const methodUsd = parseFloat(selectedOption.getAttribute('data-usd'));
+        const methodMxn = parseFloat(selectedOption.getAttribute('data-mxn'));
+
+        usdTotal = methodUsd * cups;
+        mxnTotal = methodMxn * cups;
+      } else {
+        const seats = parseInt(document.getElementById('cuppingSeats').value, 10);
+        usdTotal = 25 * seats;
+        mxnTotal = 450 * seats;
+      }
+
+      if (currentCurrency === 'USD') {
+        totalDisplay.textContent = `$${usdTotal} USD`;
+        alternateDisplay.textContent = `Aprox. $${mxnTotal} MXN`;
+      } else {
+        totalDisplay.textContent = `$${mxnTotal} MXN`;
+        alternateDisplay.textContent = `Aprox. $${usdTotal} USD`;
+      }
+    }
+
+    // Handle form submit
+    function handleReservationSubmit(event) {
+      event.preventDefault();
+
+      const expType = document.querySelector('input[name="expType"]:checked').value;
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const date = document.getElementById('reserveDate').value;
+      const time = document.getElementById('reserveTime').value;
+
+      let detailHtml = '';
+
+      if (expType === 'slowbar') {
+        const methodSelect = document.getElementById('methodSelect');
+        const methodName = methodSelect.options[methodSelect.selectedIndex].text.split('(')[0];
+        const cups = parseInt(document.getElementById('cupsCount').value, 10);
+
+        // Update remaining count
+        remainingSlowCups = Math.max(0, remainingSlowCups - cups);
+        document.getElementById('cupsRemaining').textContent = remainingSlowCups;
+
+        detailHtml = `
+          <div><strong class="text-stone-900">Cliente:</strong> ${name}</div>
+          <div><strong class="text-stone-900">Teléfono:</strong> ${phone}</div>
+          <div><strong class="text-stone-900">Experiencia:</strong> Slow Bar (${cups} taza(s))</div>
+          <div><strong class="text-stone-900">Método:</strong> ${methodName}</div>
+          <div><strong class="text-stone-900">Fecha y Hora:</strong> ${date} a las ${time}</div>
+          <div class="pt-2 border-t border-olive-200 font-semibold text-olive-800">
+            Total a liquidar en barra: ${document.getElementById('calculatedTotal').textContent}
+          </div>
+        `;
+      } else {
+        const seats = parseInt(document.getElementById('cuppingSeats').value, 10);
+        remainingCuppingSpots = Math.max(0, remainingCuppingSpots - seats);
+        document.getElementById('cuppingSpotsRemaining').textContent = remainingCuppingSpots;
+
+        detailHtml = `
+          <div><strong class="text-stone-900">Cliente:</strong> ${name}</div>
+          <div><strong class="text-stone-900">Teléfono:</strong> ${phone}</div>
+          <div><strong class="text-stone-900">Experiencia:</strong> Cata Semanal Guiada</div>
+          <div><strong class="text-stone-900">Cupos apartados:</strong> ${seats} personas</div>
+          <div><strong class="text-stone-900">Fecha:</strong> Próximo Sábado 10:30 AM</div>
+          <div class="pt-2 border-t border-olive-200 font-semibold text-skysoft-600">
+            Total a liquidar en barra: ${document.getElementById('calculatedTotal').textContent}
+          </div>
+        `;
+      }
+
+      document.getElementById('modalReceiptDetails').innerHTML = detailHtml;
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.getElementById('reservationForm').reset();
+      calculateTotal();
+    }
+
+    // Initialize initial calculations
+    calculateTotal();
+  </script>
+</body>
+</html>
